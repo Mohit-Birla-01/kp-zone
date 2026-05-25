@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     "student accommodation",
     "KPZone Stays",
   ],
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
