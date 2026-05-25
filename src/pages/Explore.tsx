@@ -3,8 +3,9 @@ import Filters from "@/components/Filter";
 import HostelCard from "@/components/HostelCard";
 import React, { useMemo, useState } from "react";
 
-import {mockHostels} from "@/data/mockHostel"
+import { mockHostels } from "@/data/mockHostel";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { type Hostel } from "@/components/HostelCard";
 
 /* ---------------- TYPES ---------------- */
 
@@ -13,18 +14,6 @@ interface FiltersState {
   genders: string[];
   occupancies: string[];
   amenities: string[];
-}
-
-interface Amenity {
-  name: string;
-}
-
-interface Hostel {
-  id: number;
-  price: number;
-  gender: string;
-  occupancy: string[];
-  amenities: Amenity[];
 }
 
 /* ---------------- COMPONENT ---------------- */

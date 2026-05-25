@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const Hero: React.FC = () => {
-  const navigate = useRouter();
+  const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("/explore");
+    router.push("/explore");
   };
 
   // Quick tags for a better mobile/desktop UX

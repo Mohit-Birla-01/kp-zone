@@ -35,7 +35,7 @@ const FloatingWhatsAppEnquiry: React.FC = () => {
   };
 
   const handleWhatsAppRedirect = (
-    e?: React.FormEvent<HTMLFormElement>
+    e?: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
   ) => {
     if (e) e.preventDefault();
 

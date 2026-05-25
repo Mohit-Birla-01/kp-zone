@@ -3,17 +3,18 @@ import React from "react";
 import Link from "next/link";
 import { MapPin, Star, IndianRupee, ArrowRight, ShieldCheck } from "lucide-react";
 
-interface Amenity {
+export interface Amenity {
   name: string;
 }
 
-interface Hostel {
+export interface Hostel {
   id: string | number;
   slug : string;
   image: string;
   name: string;
   location: string;
   gender: string;
+  occupancy: string[];
   rating: number;
   price: number;
   description : string
