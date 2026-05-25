@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-brand-primary: #4f46e5;
+  --color-brand-primary-hover: #4338ca;
+  --color-brand-accent: #0ea5e9;
+  
+  --color-bg-primary: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #f1f5f9;
+  
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #94a3b8;
+  
+  --color-border-light: #e2e8f0;
+
+  --color-status-success: #10b981;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-bg-primary text-text-primary antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold text-text-primary leading-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/30;
+  }
+  
+  .btn-primary {
+    @apply bg-brand-primary text-white px-6 py-3 rounded-full font-medium transition-all duration-150 inline-flex items-center justify-center gap-2 hover:bg-brand-primary-hover hover:-translate-y-[1px] hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-bg-surface text-text-primary border border-border-light px-6 py-3 rounded-full font-medium transition-all duration-150 inline-flex items-center justify-center gap-2 hover:bg-bg-surface-hover hover:border-text-tertiary;
+  }
+}
+@layer utilities {
+  /* Orb 1: Circular drift with soft scaling */
+  @keyframes orb-move-one {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(100px, 120px) scale(1.15); }
+    66% { transform: translate(-60px, 80px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  /* Orb 2: Counter-axis cross drift */
+  @keyframes orb-move-two {
+    0% { transform: translate(0px, 0px) scale(1); }
+    50% { transform: translate(-120px, -90px) scale(0.85); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  /* Orb 3: Linear sway & speed rotation */
+  @keyframes orb-move-three {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    40% { transform: translate(70px, -140px) rotate(90deg) scale(1.1); }
+    80% { transform: translate(-40px, 40px) rotate(180deg) scale(0.95); }
+    100% { transform: translate(0px, 0px) rotate(360deg); }
+  }
+
+  /* Orb 4: Slow vertical loop pulsation */
+  @keyframes orb-move-four {
+    0% { transform: translate(0px, 0px) scale(0.9); opacity: 0.3; }
+    50% { transform: translate(50px, -60px) scale(1.05); opacity: 0.7; }
+    100% { transform: translate(0px, 0px) scale(0.9); opacity: 0.3; }
+  }
+
+  /* Utility Animation Hooks */
+  .animate-orb-one {
+    animation: orb-move-one 22s infinite ease-in-out;
+  }
+  .animate-orb-two {
+    animation: orb-move-two 28s infinite ease-in-out;
+  }
+  .animate-orb-three {
+    animation: orb-move-three 35s infinite linear;
+  }
+  .animate-orb-four {
+    animation: orb-move-four 19s infinite ease-in-out;
+  }
+}
