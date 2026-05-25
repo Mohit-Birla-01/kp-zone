@@ -18,8 +18,20 @@ const outfit = Outfit({
   weight: ["500", "600", "700", "800"],
 });
 export const metadata: Metadata = {
-  title: "KPZone Stays",
-  description: "Find Your Perfect Stay",
+  title: {
+    template: "%s | KPZone Stays - Hostels in Greater Noida",
+    default: "KPZone Stays - Find The Best Hostels in Greater Noida",
+  },
+  description:
+    "Discover the best boys and girls hostels in Greater Noida. Affordable, safe, and comfortable PGs and rooms for students and professionals near you.",
+  keywords: [
+    "hostels in Greater Noida",
+    "boys hostel",
+    "girls hostel",
+    "PG in Greater Noida",
+    "student accommodation",
+    "KPZone Stays",
+  ],
 };
 
 export default function RootLayout({
